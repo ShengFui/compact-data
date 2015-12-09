@@ -1,4 +1,4 @@
-package net.sprd.compact.schema;
+package net.sprd.bytecompact.schema;
 
 public abstract class DoubleSchema extends SimpleSchema<Double>{
     

@@ -1,12 +1,13 @@
-package net.sprd.compact;
+package net.sprd.example;
 
 import java.util.Arrays;
 import java.util.List;
 
-import net.sprd.compact.schema.ByteCaches;
-import net.sprd.compact.schema.ClassSchema;
-import net.sprd.compact.schema.Schema;
-import net.sprd.compact.schema.Schemas;
+import net.sprd.bytecompact.schema.ClassSchema;
+import net.sprd.bytecompact.schema.Schema;
+import net.sprd.bytecompact.schema.Schemas;
+import net.sprd.compact.AbstractCompactData;
+import net.sprd.compact.ByteCaches;
 
 public class MyCompactData extends AbstractCompactData{
     

@@ -1,6 +1,6 @@
-package net.sprd.compact.schema;
+package net.sprd.bytecompact.schema;
 
-import net.sprd.compact.ByteStorage;
+import net.sprd.bytecompact.ByteStorage;
 
 public class BooleanSchema extends SimpleSchema<Integer>{
     

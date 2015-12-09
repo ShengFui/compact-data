@@ -1,9 +1,11 @@
-package net.sprd.compact.schema;
+package net.sprd.bytecompact.schema;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import net.sprd.compact.ByteStorage;
+import net.sprd.bytecompact.ByteStorage;
+import net.sprd.compact.Creator;
+import net.sprd.compact.ValueSize;
 
 public class Schemas {
     

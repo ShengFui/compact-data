@@ -1,4 +1,6 @@
-package net.sprd.compact.schema;
+package net.sprd.bytecompact.schema;
+
+import net.sprd.compact.ValueSize;
 
 public class ConstantSchema<T> extends FixedObjectSchema<T> {
 

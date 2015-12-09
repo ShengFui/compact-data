@@ -1,7 +1,7 @@
 package net.sprd.bitcompact.schema;
 
 import net.sprd.bitcompact.BitStorage;
-import net.sprd.compact.schema.ValueSize;
+import net.sprd.compact.ValueSize;
 
 public abstract class ObjectBitSchema<T, U> implements BitSchema<T>{
     

@@ -1,6 +1,6 @@
 package net.sprd.bitcompact;
 
-import net.sprd.compact.schema.ValueSize;
+import net.sprd.compact.ValueSize;
 
 public class BitStorage {
     

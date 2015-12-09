@@ -1,9 +1,11 @@
-package net.sprd.compact.schema;
+package net.sprd.bytecompact.schema;
 
 import java.util.HashMap;
 import java.util.List;
 
+import net.sprd.compact.ByteCaches;
 import net.sprd.compact.CompactData;
+import net.sprd.compact.ValueSize;
 
 public abstract class ClassSchema<C extends CompactData> extends ObjectSchema<Object[], C>{
     

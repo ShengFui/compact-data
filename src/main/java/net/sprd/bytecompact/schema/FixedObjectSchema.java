@@ -1,4 +1,6 @@
-package net.sprd.compact.schema;
+package net.sprd.bytecompact.schema;
+
+import net.sprd.compact.ValueSize;
 
 public abstract class FixedObjectSchema<T> extends SimpleSchema<T> implements Schema<T>{
     

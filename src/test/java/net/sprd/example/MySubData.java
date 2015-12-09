@@ -1,8 +1,9 @@
-package net.sprd.compact;
+package net.sprd.example;
 
-import net.sprd.compact.schema.ClassSchema;
-import net.sprd.compact.schema.Schema;
-import net.sprd.compact.schema.Schemas;
+import net.sprd.bytecompact.schema.ClassSchema;
+import net.sprd.bytecompact.schema.Schema;
+import net.sprd.bytecompact.schema.Schemas;
+import net.sprd.compact.AbstractCompactData;
 
 public class MySubData extends AbstractCompactData{
     

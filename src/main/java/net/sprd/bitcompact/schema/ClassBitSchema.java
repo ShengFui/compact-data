@@ -1,8 +1,8 @@
 package net.sprd.bitcompact.schema;
 
+import net.sprd.compact.ByteCaches;
 import net.sprd.compact.CompactData;
-import net.sprd.compact.schema.ByteCaches;
-import net.sprd.compact.schema.ValueSize;
+import net.sprd.compact.ValueSize;
 
 public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSchema<Object[], C>{
     

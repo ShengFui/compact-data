@@ -1,4 +1,4 @@
-package net.sprd.compact.schema;
+package net.sprd.compact;
 
 public class ValueSize<T> {
     

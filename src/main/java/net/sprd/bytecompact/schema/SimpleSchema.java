@@ -1,4 +1,4 @@
-package net.sprd.compact.schema;
+package net.sprd.bytecompact.schema;
 
 public class SimpleSchema<T> implements Schema<T>{
     

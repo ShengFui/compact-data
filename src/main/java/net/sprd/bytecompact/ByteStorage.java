@@ -1,9 +1,9 @@
-package net.sprd.compact;
+package net.sprd.bytecompact;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
-import net.sprd.compact.schema.ValueSize;
+import net.sprd.compact.ValueSize;
 
 public class ByteStorage {
     

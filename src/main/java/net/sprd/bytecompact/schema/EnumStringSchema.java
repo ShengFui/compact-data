@@ -1,6 +1,7 @@
-package net.sprd.compact.schema;
+package net.sprd.bytecompact.schema;
 
-import net.sprd.compact.ByteStorage;
+import net.sprd.bytecompact.ByteStorage;
+import net.sprd.compact.ValueSize;
 
 public class EnumStringSchema extends FixedObjectSchema<String>{
     
