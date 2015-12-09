@@ -162,5 +162,15 @@ public class ByteStorage {
         long longValue = Double.doubleToRawLongBits(value);
         setLong(data, offset, longValue);
     }
+    
+    public static float getFloat(byte[] data, int offset) {
+        int intValue = getInt(data, offset);
+        return Float.intBitsToFloat(intValue);
+    }
+    
+    public static void setFloat(byte[] data, int offset, float value) {
+        int intValue = Float.floatToRawIntBits(value);
+        setInt(data, offset, intValue);
+    }
 
 }

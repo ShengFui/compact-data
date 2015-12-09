@@ -5,7 +5,7 @@ import net.sprd.bitcompact.BitStorage;
 public class DoubleBitSchema extends AbstractDoubleBitSchema{
 
     public DoubleBitSchema() {
-        super(8);
+        super(64);
     }
     
     public double getDouble(byte[] data, int offset) {

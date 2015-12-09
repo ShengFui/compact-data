@@ -49,6 +49,18 @@ public class Schemas {
         }
     };
     
+    public static FloatSchema FLOAT = new FloatSchema(4){
+        @Override
+        public float getFloat(byte[] data, int offset) {
+            return ByteStorage.getFloat(data, offset);
+        }
+        @Override
+        public int setFloat(byte[] data, int offset, float value) {
+            ByteStorage.setFloat(data, offset, value);
+            return this.byteCount;
+        }
+    };
+    
     public static NullSchema NULL = new NullSchema();
     
     public static<T> ConstantSchema<T> CONSTANT(T value) {

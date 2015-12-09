@@ -29,6 +29,12 @@ public class BitSchemas {
 
     public static DoubleBitSchema DOUBLE = new DoubleBitSchema();
 
+    public static FloatBitSchema FLOAT = new FloatBitSchema();
+
+    public static FloatingBitSchema FLOATING(int bitCount, double factor) {
+        return new FloatingBitSchema(bitCount, factor);
+    }
+
     public static NullBitSchema NULL = new NullBitSchema();
 
     public static <T> ConstantBitSchema<T> CONSTANT(T value) {
