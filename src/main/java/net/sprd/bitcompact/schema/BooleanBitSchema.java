@@ -8,10 +8,10 @@ public abstract class BooleanBitSchema extends SimpleBitSchema<Boolean>{
         super(1);
     }
     
-    public boolean getBool(byte[] data, int offset) {
+    public boolean getBoolean(byte[] data, int offset) {
         return BitStorage.getBoolean(data, offset);
     }
-    public int setBool(byte[] data, int offset, boolean value) {
+    public int setBoolean(byte[] data, int offset, boolean value) {
         BitStorage.setBoolean(data, offset, value);
         return 1;
     }
