@@ -2,7 +2,7 @@ package net.sprd.bitcompact.schema;
 
 import net.sprd.bitcompact.BitStorage;
 
-public abstract class IntBitSchema extends SimpleBitSchema<Integer>{
+public class IntBitSchema extends SimpleBitSchema<Integer>{
     
     private int absolutOffset;
 

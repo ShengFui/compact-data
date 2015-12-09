@@ -2,7 +2,7 @@ package net.sprd.bitcompact.schema;
 
 import net.sprd.bitcompact.BitStorage;
 
-public abstract class FloatingBitSchema extends AbstractDoubleBitSchema{
+public class FloatingBitSchema extends AbstractDoubleBitSchema{
 
     private double factor;
     public FloatingBitSchema(int bitCount, double factor) {

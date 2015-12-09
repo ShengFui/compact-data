@@ -2,7 +2,7 @@ package net.sprd.bitcompact.schema;
 
 import net.sprd.bitcompact.BitStorage;
 
-public abstract class LongBitSchema extends SimpleBitSchema<Long>{
+public class LongBitSchema extends SimpleBitSchema<Long>{
     
     private long absolutOffset;
 

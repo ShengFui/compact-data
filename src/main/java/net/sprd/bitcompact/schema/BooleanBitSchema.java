@@ -2,7 +2,7 @@ package net.sprd.bitcompact.schema;
 
 import net.sprd.bitcompact.BitStorage;
 
-public abstract class BooleanBitSchema extends SimpleBitSchema<Boolean>{
+public class BooleanBitSchema extends SimpleBitSchema<Boolean>{
     
     public BooleanBitSchema() {
         super(1);

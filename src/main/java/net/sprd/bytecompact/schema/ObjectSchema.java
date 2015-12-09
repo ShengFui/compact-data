@@ -28,7 +28,7 @@ public abstract class ObjectSchema<T, U> implements Schema<T>{
         boolean notNull= ByteStorage.getBoolean(data, offset);
         if (notNull) {
             ValueSize<U> valueSize = getObject(data, offset+1);
-            return new ValueSize<U>(valueSize.getValue(), valueSize.getByteCount()+1);
+            return new ValueSize<U>(valueSize.getValue(), valueSize.getSize()+1);
         } else {
             return new ValueSize<U>(null, 1);
         }

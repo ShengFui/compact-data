@@ -93,7 +93,7 @@ public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSch
         }
     }
 
-    protected int getObjectByteCount(Object[] objects) {
+    protected int getObjectBitCount(Object[] objects) {
         int byteCount = 0;
         if (objects != null) {
             for (int i = 0; i < objects.length; i++) {
@@ -142,7 +142,7 @@ public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSch
         return c;
     }
 
-    protected int getObjectByteCount(byte[] data, int offset) {
+    protected int getObjectBitCount(byte[] data, int offset) {
         int byteCount = 0;
         for (int i = 0; i < types.length; i++) {
             BitSchema type = types[i];

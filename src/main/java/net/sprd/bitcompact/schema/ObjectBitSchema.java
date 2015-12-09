@@ -9,7 +9,7 @@ public abstract class ObjectBitSchema<T, U> implements BitSchema<T>{
     public final int getBitCount(byte[] data, int offset) {
         boolean notNull= BitStorage.getBoolean(data, offset);
             if (notNull){
-               return getObjectByteCount(data, offset+1)+1;
+               return getObjectBitCount(data, offset+1)+1;
             } else {
                 return 1;
         }
@@ -20,7 +20,7 @@ public abstract class ObjectBitSchema<T, U> implements BitSchema<T>{
         if (value == null) {
             return 1;
         } else {
-            return getObjectByteCount(value)+1;
+            return getObjectBitCount(value)+1;
         }
     }
     
@@ -28,7 +28,7 @@ public abstract class ObjectBitSchema<T, U> implements BitSchema<T>{
         boolean notNull= BitStorage.getBoolean(data, offset);
         if (notNull) {
             ValueSize<U> valueSize = getObject(data, offset+1);
-            return new ValueSize<U>(valueSize.getValue(), valueSize.getByteCount()+1);
+            return new ValueSize<U>(valueSize.getValue(), valueSize.getSize()+1);
         } else {
             return new ValueSize<U>(null, 1);
         }
@@ -44,9 +44,9 @@ public abstract class ObjectBitSchema<T, U> implements BitSchema<T>{
         }
     }
     
-    protected abstract int getObjectByteCount(byte[] data, int offset);
+    protected abstract int getObjectBitCount(byte[] data, int offset);
     
-    protected abstract int getObjectByteCount(T t);
+    protected abstract int getObjectBitCount(T t);
     
     protected abstract ValueSize<U> getObject(byte[] data, int offset);
     

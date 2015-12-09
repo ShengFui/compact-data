@@ -1,4 +1,4 @@
-package net.sprd.bytecompact.schema;
+package net.sprd.bitcompact.schema;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,30 +6,30 @@ import java.util.List;
 import net.sprd.bytecompact.ByteStorage;
 import net.sprd.compact.ValueSize;
 
-public class ListSchema<T, U> extends ObjectSchema<List<T>, List<U>>{
+public class ListBitSchema<T, U> extends ObjectBitSchema<List<T>, List<U>>{
     
-    protected ObjectSchema<T, U> itemSchema;
+    protected ObjectBitSchema<T, U> itemSchema;
     
-    public ListSchema(ObjectSchema<T, U> itemSchema) {
+    public ListBitSchema(ObjectBitSchema<T, U> itemSchema) {
         this.itemSchema=itemSchema;
     }
     
     @Override
-    protected int getObjectByteCount(byte[] data, int offset) {
+    protected int getObjectBitCount(byte[] data, int offset) {
         int byteCount = 4;
         int len = ByteStorage.getInt(data, offset);
         for (int i=0;i<len;i++) {
-            byteCount +=itemSchema.getByteCount(data, offset+byteCount);
+            byteCount +=itemSchema.getBitCount(data, offset+byteCount);
         }
         return byteCount;
     }
     
     @Override
-    protected int getObjectByteCount(List<T> list) {
+    protected int getObjectBitCount(List<T> list) {
         int byteCount = 4;
         int len = list.size();
         for (int i=0;i<len;i++) {
-            byteCount +=itemSchema.getByteCount(list.get(i));
+            byteCount +=itemSchema.getBitCount(list.get(i));
         }
         return byteCount;
     }
