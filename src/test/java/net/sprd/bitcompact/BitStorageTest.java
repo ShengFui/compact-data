@@ -7,6 +7,7 @@ public class BitStorageTest {
     
     @Test
     public void testInt() {
+        
         testInt(0,Integer.MAX_VALUE, 0, 32);
         testInt(0,Integer.MIN_VALUE, 0, 32);
         testInt(0,0, 0, 32);
