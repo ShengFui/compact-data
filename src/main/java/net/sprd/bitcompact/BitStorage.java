@@ -4,6 +4,14 @@ import net.sprd.compact.schema.ValueSize;
 
 public class BitStorage {
     
+    public static boolean getBoolean(byte[] data, int bitOffset) {
+        return getInt(data, bitOffset, 1)!=0;
+    }
+    
+    public static void setBoolean(byte[] data, int bitOffset, boolean value) {
+        BitStorage.setInt(data, bitOffset, 1, value?1:0);
+    }
+    
     public static int getInt(byte[] data, int bitOffset, int bitCount) {
         int byteOffset = bitOffset>>3;
         int byteBitOffset = bitOffset&7;
