@@ -12,16 +12,17 @@ import net.sprd.compact.ByteCaches;
 public class MyCompactData extends AbstractCompactData{
     
     public static ClassSchema<MyCompactData> SCHEMA = new ClassSchema<MyCompactData>(new Schema[]{
-            Schemas.INT, 
-            Schemas.ASCII(2),
-            Schemas.LONG, 
-            Schemas.DOUBLE, 
-            Schemas.STRING, 
-            MySubData.SCHEMA,
-            Schemas.LIST(Schemas.NUMBERSTRING),
-            Schemas.STRING, 
-            Schemas.NUMBERSTRING,
-            Schemas.BOOL}){
+            Schemas.INT, //id
+            Schemas.ASCII(2), //countryCode
+            Schemas.LONG, // version
+            Schemas.DOUBLE, //weight
+            Schemas.STRING, //description
+            MySubData.SCHEMA, //subdata
+            Schemas.LIST(Schemas.NUMBERSTRING), //list of printtypeIds
+            Schemas.STRING, //name
+            Schemas.NUMBERSTRING, //currencyId
+            Schemas.BOOL //isValid
+    }){
 
                 @Override
                 public MyCompactData create() {
