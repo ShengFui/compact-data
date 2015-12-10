@@ -13,3 +13,8 @@ The bit variant needs less memory but is also less performance.
 All compact data are represented with a byte array, so there is also an efficient byte serialization without any overhead.
 
 Currently, only readonly data are supported.
+
+For a bit-based example see
+https://github.com/ShengFui/compact-data/blob/master/src/test/java/net/sprd/example/Path.java
+a byte based example
+https://github.com/ShengFui/compact-data/blob/master/src/test/java/net/sprd/example/MyCompactData.java
