@@ -32,13 +32,12 @@ public class StringBitSchema extends ObjectBitSchema<String, String> {
 
     @Override
     protected ValueSize<String> getObject(byte[] data, int offset) {
-        int bytePos =0;
         byte val = 0;
-        int byteCount = getObjectBitCount(data, offset)>>3;
+        int byteCount = getObjectBitCount(data, offset)/8;
         byte[] stringBytes = new byte[byteCount-1];
         for (int i=0;i<(byteCount-1);i++){
-            val = (byte)(BitStorage.getInt(data, offset+i<<3, 8) & 255);
-            stringBytes[bytePos] = val;
+            val = (byte)(BitStorage.getInt(data, offset+i*8, 8) & 255);
+            stringBytes[i] = val;
         }
         return new ValueSize<String>(new String(stringBytes, StandardCharsets.UTF_8), byteCount);
     }

@@ -62,12 +62,12 @@ public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSch
     
     public double getDouble(C compactData, int index) {
         int offset = getOffset(compactData, index);
-        return ((DoubleBitSchema)types[index]).getDouble(compactData.getData(), offset);
+        return ((AbstractDoubleBitSchema)types[index]).getDouble(compactData.getData(), offset);
     }
     
     public void setDouble(C compactData, int index, double value) {
         int offset = getOffset(compactData, index);
-        ((DoubleBitSchema)types[index]).setDouble(compactData.getData(), offset, value);
+        ((AbstractDoubleBitSchema)types[index]).setDouble(compactData.getData(), offset, value);
     }
     
     public <T> T getValue(C compactData, int index) {
@@ -131,7 +131,9 @@ public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSch
     }
 
     public byte[] createData(Object[] objects) {
-        byte[] data=new byte[getBitCount(objects)];
+        int bitCount = getBitCount(objects);
+        int byteCount = (int)Math.ceil(bitCount/8.0);
+        byte[] data=new byte[byteCount];
         setData(data, 0, objects);
         return ByteCaches.getInstance().getCachedData(data);
     }
@@ -156,8 +158,8 @@ public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSch
     protected ValueSize<C> getObject(byte[] data, int offset) {
         C t = create();
         t.init(data, offset);
-        int byteCount = getBitCount(data, offset);
-        return new ValueSize<C>(t, byteCount);
+        int bitCount = getObjectBitCount(data, offset);
+        return new ValueSize<C>(t, bitCount);
     }
 
     @Override

@@ -159,7 +159,7 @@ public abstract class ClassSchema<C extends CompactData> extends ObjectSchema<Ob
     protected ValueSize<C> getObject(byte[] data, int offset) {
         C t = create();
         t.init(data, offset);
-        int byteCount = getByteCount(data, offset);
+        int byteCount = getObjectByteCount(data, offset);
         return new ValueSize<C>(t, byteCount);
     }
 
