@@ -13,6 +13,22 @@
         <downloadSources>true</downloadSources>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+    
+    <scm>
+        <connection>scm:git:git@github.com:ShengFui/compact-data.git</connection>
+        <developerConnection>scm:git:git@github.com:ShengFui/compact-data.git</developerConnection>
+    </scm>
+ 
+    <distributionManagement>
+        <repository>
+            <id>sprd-libs-releases</id>
+            <url>https://repo.spreadomat.net/content/repositories/libs-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>sprd-libs-snapshots</id>
+            <url>https://repo.spreadomat.net/content/repositories/libs-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
  
     <developers>
