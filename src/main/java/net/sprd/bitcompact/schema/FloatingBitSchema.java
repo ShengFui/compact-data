@@ -11,7 +11,7 @@ public class FloatingBitSchema extends AbstractDoubleBitSchema{
      * handle values between [minValue ; minValue + ((2^bitCount -1)/factor)], 
      * precision (minimal distance between 2 values) is 1/factor 
      * 
-     * @param bitCount number of bits to store
+     * @param bitCount number of bits to store (1-63) (for 64bit, only until Long.MAX_VALUE)
      * @param factor factor to scale number to int
      * @param minValue minimum value
      */
