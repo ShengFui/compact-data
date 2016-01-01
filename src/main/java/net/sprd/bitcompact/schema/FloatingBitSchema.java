@@ -22,12 +22,12 @@ public class FloatingBitSchema extends AbstractDoubleBitSchema{
     }
     
     public double getDouble(byte[] data, int offset) {
-        return bitCount>32 ?
+        return bitCount>31 ?
                 (BitStorage.getLong(data, offset, bitCount)/factor)+minValue:
                     (BitStorage.getInt(data, offset, bitCount)/factor)+minValue;
     }
     public int setDouble(byte[] data, int offset, double value) {
-        if (bitCount>32) {
+        if (bitCount>31) {
             BitStorage.setLong(data, offset, bitCount, (long)(((value-minValue)*factor)+0.5));
         } else {
             BitStorage.setInt(data, offset, bitCount, (int)(((value-minValue)*factor)+0.5));
