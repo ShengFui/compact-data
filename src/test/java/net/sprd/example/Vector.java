@@ -8,9 +8,9 @@ import net.sprd.compact.AbstractCompactData;
 public class Vector extends AbstractCompactData {
     
     public static ClassBitSchema<Vector> SCHEMA = new ClassBitSchema<Vector>(new BitSchema[]{
-            BitSchemas.FLOATING(10, 10.0), //x
-            BitSchemas.FLOATING(10, 10.0), //y
-            BitSchemas.FLOATING(10, 10.0) //z
+            BitSchemas.FLOATING(10, 10.0, -51.0), //x
+            BitSchemas.FLOATING(10, 10.0, -51.0), //y
+            BitSchemas.FLOATING(10, 10.0, -51.0) //z
     }){
 
         @Override
@@ -41,7 +41,7 @@ public class Vector extends AbstractCompactData {
     }
     
     public static void main(String[] args) {
-        Vector vector =  Vector.SCHEMA.createObject(new Object[]{10.3,97.5,21.0});
+        Vector vector =  Vector.SCHEMA.createObject(new Object[]{50.3,-0.5,-43.2});
         System.out.println(vector);
         System.out.println(vector.getData().length+" bytes");
     }
