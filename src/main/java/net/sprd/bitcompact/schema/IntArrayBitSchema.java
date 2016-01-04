@@ -11,6 +11,14 @@ public class IntArrayBitSchema extends ObjectBitSchema<int[], int[]>{
         this.itemSchema=itemSchema;
     }
     
+    public IntBitSchema getItemSchema() {
+        return itemSchema;
+    }
+
+    public void setItemSchema(IntBitSchema itemSchema) {
+        this.itemSchema = itemSchema;
+    }
+
     @Override
     protected int getObjectBitCount(byte[] data, int offset) {
         int bitCount = 32;

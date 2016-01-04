@@ -11,6 +11,14 @@ public class FloatArrayBitSchema extends ObjectBitSchema<float[], float[]>{
         this.itemSchema=itemSchema;
     }
     
+    public AbstractDoubleBitSchema getItemSchema() {
+        return itemSchema;
+    }
+
+    public void setItemSchema(AbstractDoubleBitSchema itemSchema) {
+        this.itemSchema = itemSchema;
+    }
+
     @Override
     protected int getObjectBitCount(byte[] data, int offset) {
         int bitCount = 32;

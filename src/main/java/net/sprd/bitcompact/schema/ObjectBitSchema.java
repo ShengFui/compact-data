@@ -34,6 +34,15 @@ public abstract class ObjectBitSchema<T, U> implements BitSchema<T>{
         }
     }
     
+    protected U getInternalObject(byte[] data, int offset) {
+        boolean notNull= BitStorage.getBoolean(data, offset);
+        if (notNull) {
+            return getPureObject(data, offset+1);
+        } else {
+            return null;
+        }
+    }
+    
     public final int set(byte[] data, int offset, T value) {
         if (value == null) {
             BitStorage.setBoolean(data, offset, false);
@@ -42,6 +51,10 @@ public abstract class ObjectBitSchema<T, U> implements BitSchema<T>{
             BitStorage.setBoolean(data, offset, true);
             return setObject(data, offset+1, value) + 1;
         }
+    }
+    
+    protected U getPureObject(byte[] data, int offset) {
+        return getObject(data, offset).getValue();
     }
     
     protected abstract int getObjectBitCount(byte[] data, int offset);
