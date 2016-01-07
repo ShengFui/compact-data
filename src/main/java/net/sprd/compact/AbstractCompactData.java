@@ -10,8 +10,8 @@ public class AbstractCompactData implements CompactData{
     }
     
     public void init(byte[] data, int offset) {
-        this.data=data;
         this.offset = offset;
+        setData(data);
     }
     
     public byte[] getData() {

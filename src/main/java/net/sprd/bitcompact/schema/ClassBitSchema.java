@@ -12,6 +12,10 @@ public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSch
         this.types= types;
     }
     
+    public BitSchema[] getTypes() {
+        return types;
+    }
+
     public abstract C create();
     
     public int getOffset(C compactData, int index) {
@@ -73,7 +77,7 @@ public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSch
     public <T> T getValue(C compactData, int index) {
         int offset = getOffset(compactData, index);
         if (types[index] instanceof ObjectBitSchema) {
-            return ((ObjectBitSchema<?,T>)types[index]).get(compactData.getData(), offset).getValue();
+            return ((ObjectBitSchema<?,T>)types[index]).getInternalObject(compactData.getData(), offset);
         } else if (types[index] instanceof FixedObjectBitSchema) {
             return ((FixedObjectBitSchema<T>)types[index]).get(compactData.getData(), offset).getValue();
         } else {
@@ -156,10 +160,15 @@ public abstract class ClassBitSchema<C extends CompactData> extends ObjectBitSch
 
     @Override
     protected ValueSize<C> getObject(byte[] data, int offset) {
-        C t = create();
-        t.init(data, offset);
+        C t = getPureObject(data, offset);
         int bitCount = getObjectBitCount(data, offset);
         return new ValueSize<C>(t, bitCount);
+    }
+    
+    protected C getPureObject(byte[] data, int offset) {
+        C t = create();
+        t.init(data, offset);
+        return t;
     }
 
     @Override

@@ -31,8 +31,8 @@ public class BitSchemas {
 
     public static FloatBitSchema FLOAT = new FloatBitSchema();
 
-    public static FloatingBitSchema FLOATING(int bitCount, double factor) {
-        return new FloatingBitSchema(bitCount, factor);
+    public static FloatingBitSchema FLOATING(int bitCount, double factor, double minValue) {
+        return new FloatingBitSchema(bitCount, factor, minValue);
     }
 
     public static NullBitSchema NULL = new NullBitSchema();
