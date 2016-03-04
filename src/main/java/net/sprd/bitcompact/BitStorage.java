@@ -174,6 +174,14 @@ public class BitStorage {
         }
         System.out.println();
     }
+    
+    public static void printRevers(byte[] data) {
+        for(int i = data.length-1; i >=0; i--) {
+            print(data[i]);
+        }
+        System.out.println();
+    }
+    
     public static void print(byte data) {
         print01(data&128);
         print01(data&64);

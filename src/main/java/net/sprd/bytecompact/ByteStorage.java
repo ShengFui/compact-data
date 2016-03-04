@@ -142,6 +142,12 @@ public class ByteStorage {
         return (long) (data[offset] & 255)| (long) (data[offset+1] & 255)<<8 | (long) (data[offset+2]& 255)<<16 | (long) (data[offset+3] & 255)<<24 | (long) (data[offset+4] & 255)<<32 | (long) (data[offset+5] & 255)<<40 | (long) (data[offset+6] & 255)<<48 | (long) (data[offset+7] & 255) <<56;
     }
     
+    public static byte[] getLongBytes(long value) {
+        byte[] result = new byte[8];
+        setLong(result, 0, value);
+        return result;
+    }
+    
     public static void setLong(byte[] data, int offset, long value) {
         data[offset]=(byte) value;
         data[offset+1]=(byte) (value>>8);
